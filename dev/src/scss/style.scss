@@ -1,0 +1,20 @@
+// @charset "UTF-8";
+
+@import "colors.scss";
+@import "variables.scss";
+@import "fonts.scss";
+@import "mixins.scss";
+
+@import "animations.scss";
+@import "settings.scss";
+@import "utilities.scss";
+@import "typography.scss";
+@import "modules.scss";
+@import "layouts.scss";
+
+$slick-font-path: '../js/slick/fonts/';
+$slick-loader-path: '../';
+
+@import "../js/slick/slick-theme.scss";
+@import "../js/slick/slick.scss";
+@import "style-top";

@@ -1,0 +1,362 @@
+/*************************************
+
+top
+
+*************************************/
+
+
+///////////////////////////////////////////////////////
+
+// reset
+
+///////////////////////////////////////////////////////
+body{
+    padding-top: 400px;
+    letter-spacing: 0 0.5em;
+
+    @include break( tab ){
+        padding-top: 200px;
+    }
+
+    
+}
+
+.section{
+    &__index{
+        margin-bottom: 60px;
+        text-align: center;
+        font-size: 1.5em;
+        font-weight: bold;
+        letter-spacing: 0.1em;
+        font-feature-settings: "palt";
+    }
+
+
+    & + .section{
+        margin-top: 18vh;
+    }
+}
+
+
+p{
+    line-height: 2.25;
+}
+
+
+
+///////////////////////////////////////////////////////
+
+// style
+
+///////////////////////////////////////////////////////
+
+.section--about{
+
+    .section{
+        &__content{
+            text-align: center;
+        }
+    }
+
+}
+
+
+.section--works{
+
+    .work{
+        &__genre{
+            margin-top: 40px;
+            text-align: center;
+            font-family: $font_serif_b;
+            letter-spacing: 0.05em;
+        }
+        &__img{
+            transition: transition(all, 0.5s);
+
+        }
+    }
+
+    .slick-list{
+        
+        @include break( tab,min ) {
+            overflow: visible;
+         }
+    }
+    .slick-slide{
+        margin-right: 100px;
+        margin-left: 100px;
+        transition: transition(all, 0.30s);
+        filter: grayscale( 75% );
+        outline: none;
+
+        @include break( tab ){
+            margin-right: 1%;
+            margin-left: 1%;
+        }
+    }
+    .slick-current{
+        filter: grayscale( 0%);
+        
+        .work{
+            &__img {
+                transform: scale( 1.1 );
+                box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+            }
+        }
+    }
+    .slick-active{
+        .work{
+            &__img{
+                box-shadow: 0 0 20px rgba(0,0,0,0.055 );
+            }
+        }
+    }
+
+    .slick-prev,
+    .slick-next{
+        width: 50px;
+        height: 50px;
+        
+        @include mouseOver(){
+            width: 100px;
+            height: 100px;
+
+            &:before{
+                height: 100%;
+                border-radius: 100%;
+            }
+
+            &:after{
+                width: 40px;
+            }
+        }
+
+        &:before{
+            content: " ";
+            width: 100%;
+            height: 1px;
+            display: block;
+            background-color: #aaaaaa;
+            transition: transition();
+        }
+
+        &:after{
+            content: " ";
+            width: 0;
+            height: 1px;
+            margin: auto;
+            transition: transition();
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: #ffffff;
+        }
+
+        .slick-prev {
+            left: 0;
+        }
+        .slick-next {
+            right: 0;
+        }
+    }
+}
+
+
+
+.section--price {
+    padding-right: 6%;
+    padding-left: 6%;
+
+    &__description{
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .prices{
+        display: flex;
+        flex-direction: row;
+
+        @include break( tab) {
+           flex-direction: column
+        }
+
+        .exPrice{
+            width: 100%;
+            padding-right: 30px;
+            padding-left: 30px;
+            text-align: center;
+            list-style: none;
+            box-sizing: border-box;
+
+            @include break( tab) {
+                padding-right: 0;padding-left: 0;
+
+                    margin-top: 40px;
+            }
+
+            &__index{
+                line-height: 1;
+                font-family: $font_serif_b;
+                &:first-letter{
+                    font-size: 10em;
+                    font-weight: bold;
+                    color: #ccc;
+                    font-family: $font_serif;
+                    display: inline-block;
+                }
+            }
+
+            &__table{
+                text-align: left;
+
+                &__tr{
+                    padding-top: 1.5em;
+                    padding-bottom: 1.5em;
+                    display: flex;
+                    flex-direction: row;
+                    border-bottom: solid  1px #f0f0f0;
+                }
+
+                &__th{
+                    width: 200px;
+
+                    @include break( tab) {
+                        width: 130px;
+                    }
+                }
+            }
+        }
+    }
+
+
+    &__attention{
+        margin-top: 60px;
+        padding: 50px;
+        text-align: center;
+        background-color: #fbfbfb;
+
+        &__index{
+            margin-bottom: 30px;
+            font-family: $font_serif_b;
+        }
+
+    }
+}
+
+
+.section--contact {
+
+    .table-tr {
+        padding-top: 1.5em;
+        padding-bottom: 1.5em;
+        display: flex;
+        flex-direction: row;
+        border-bottom: solid 1px #f0f0f0;
+
+        @include break( tab) {
+            // flex-direction: column;
+        }
+    }
+    .table-th {
+        width: 200px;
+        line-height: 1.5;
+        small{
+            margin-top: 10px;
+            display: block;
+            font-family: $font_serif_b;
+        }
+    }
+    .table-td{
+        width: 100%;
+
+        @include break( tab) {
+            // margin-top: 30px;
+        }
+
+        &.required{
+            position: relative;
+
+            &:after{
+                content: "※必須";
+                position: absolute;
+                top: -2em;
+                left: 0;
+                color: #999;
+                font-size: 0.5em;
+
+            }
+        }
+    }
+
+
+    input[ type="text"],
+    input[ type="email"],
+    textarea{
+        width: 60%;
+        box-sizing: border-box;
+        display: block;
+        padding: 1em;
+        border: 1px solid #f0f0f0;
+
+        @include break( tab) {
+           width: 100%;
+        }
+    }
+
+
+    input[ type="checkbox" ]{
+        margin-right: 5px;
+    }
+
+
+    .lists{
+        li{
+            line-height: 1;
+            list-style: none;
+            padding-top: 1em;
+            padding-bottom: 1em;
+            border-bottom: 1px dotted #efefef;
+            letter-spacing: 0.025em;
+
+
+            &:before{
+                content: " ";
+                width: 1em;
+                height: 1px;
+                display: inline-block;
+                vertical-align: middle;
+                background-color: #cccccc;
+            }
+        }
+    }
+
+
+    input[ type="button" ]{
+        
+        width: 500px;
+        margin-top: 30px;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 3em 2em;
+        display: block;
+        color: #ffffff;
+        border: none;
+        transition: transition();
+        font-family: $fontFamily;
+        background-color: #1a1a1a;
+        cursor:pointer;
+
+        @include mouseOver( ){
+            background-color: #555555;
+        }
+
+
+        @include break( tab) {
+            width: 100%;
+        }
+
+        
+    }
+}

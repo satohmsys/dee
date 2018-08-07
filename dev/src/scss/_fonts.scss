@@ -1,0 +1,52 @@
+//////////////////////////////////////////
+
+//font setting
+
+//include by style.scss
+
+//////////////////////////////////////////
+
+
+@font-face {
+	font-family: 'Butler Bold';
+  src: url("../fonts/butler/Butler_Bold.woff") format("woff"),
+      // url('../fonts/butler/Butler_Bold.eot?#iefix') format('embedded-opentype'),
+		   url('../fonts/butler/Butler_Bold.otf') format('truetype');
+}
+@font-face {
+	font-family: 'Butler Light';
+  src: url("../fonts/butler/Butler_Light.woff") format("woff"),
+      // url('../fonts/butler/Butler_Bold.eot?#iefix') format('embedded-opentype'),
+		   url('../fonts/butler/Butler_Light.otf') format('truetype');
+	font-weight: 700;
+}
+@font-face {
+  font-family: 'Noto Serif Japanese';
+  font-style: normal;
+  font-weight: 400;
+  src:url('../fonts/notos/NotoSerifCJKjp-Regular.min.woff') format('woff'),
+      url('../fonts/notos/NotoSerifCJKjp-Regular.min.woff2') format('woff2'),
+      url('../fonts/notos/NotoSerifCJKjp-Regular.min.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Noto Serif Japanese';
+  font-style: normal;
+  font-weight: 700;
+  src:url('../fonts/notos/NotoSerifCJKjp-Bold.min.woff') format('woff'),
+      url('../fonts/notos/NotoSerifCJKjp-Bold.min.woff2') format('woff2'),
+      url('../fonts/notos/NotoSerifCJKjp-Bold.min.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Noto Serif Japanese';
+  font-style: normal;
+  font-weight: 900;
+  src:url('../fonts/notos/NotoSerifCJKjp-Black.min.woff') format('woff'),
+      url('../fonts/notos/NotoSerifCJKjp-Black.min.woff2') format('woff2'),
+      url('../fonts/notos/NotoSerifCJKjp-Black.min.ttf') format('truetype');
+}
+
+
+// @import url("https://fonts.googleapis.com/earlyaccess/notosansjapanese.css");
+
+// 【明朝】　font-family:Times New Roman , "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", Hiragino Mincho ProN , "MSP明朝","MS PMincho","MS 明朝",serif;
+// 【ゴシック】　font-family: Verdana, "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
