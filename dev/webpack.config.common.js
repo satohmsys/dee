@@ -93,12 +93,18 @@ let config = {
 	      from: './src/img/',
 	      to: vars.PATHS.dir.output + '/img'
 	    }]),			
-        new HtmlWebpackPlugin({ 
-			filename: 'index.html',
-			// favicon: './src/img/common/favicon.ico',
-			template: './src/ejs/index.ejs',
-			// inject: 'head',
+        new HtmlWebpackPlugin({
+        	filename: 'index.html',
+        	// favicon: './src/img/common/favicon.ico',
+        	template: './src/ejs/index.ejs',
+        	// inject: 'head',
 		}),
+        new HtmlWebpackPlugin({
+        	filename: 'thanks.html',
+        	// favicon: './src/img/common/favicon.ico',
+        	template: './src/ejs/thanks.ejs',
+        	// inject: 'head',
+        }),
 
 	],
 

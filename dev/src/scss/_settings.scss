@@ -25,9 +25,9 @@ html{
 	 -webkit-text-size-adjust: 100%;
 	color: $basefontColor;
 	
-	@include break( sp ){
-		font-size: 14px;
-	}
+	// @include break( sp ){
+	// 	font-size: 14px;
+	// }
 }
 
 body{

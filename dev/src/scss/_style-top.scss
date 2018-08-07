@@ -69,6 +69,10 @@ p{
             text-align: center;
             font-family: $font_serif_b;
             letter-spacing: 0.05em;
+
+            @include break( tab) {
+                word-wrap: break-word;
+            }
         }
         &__img{
             transition: transition(all, 0.5s);
@@ -205,6 +209,10 @@ p{
                     color: #ccc;
                     font-family: $font_serif;
                     display: inline-block;
+
+                    @include break( tab) {
+                        font-size: 5em;
+                    }
                 }
             }
 
@@ -302,6 +310,7 @@ p{
 
         @include break( tab) {
            width: 100%;
+           font-size: $basefontSize;
         }
     }
 
@@ -347,6 +356,9 @@ p{
         font-family: $fontFamily;
         background-color: #1a1a1a;
         cursor:pointer;
+	   -webkit-appearance: none;
+	   border-radius: 0;
+
 
         @include mouseOver( ){
             background-color: #555555;

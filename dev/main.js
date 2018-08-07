@@ -7,6 +7,7 @@ scripts
 /**
 * html監視設定
 */
+import './src/ejs/thanks.ejs'; 
 import './src/ejs/index.ejs'; 
 /**
 * scss監視設定
