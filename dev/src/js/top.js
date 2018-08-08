@@ -90,21 +90,21 @@ var effefcts = () => {
 				path: path_dot
 			},
 			500,
-			mina.elastic,
+			mina.backout,
 			function () {
 				setTimeout(function () {
 					anim_p0.animate({
 						path: path_d
 					},
 						500,
-						mina.elastic,
+						mina.backout,
 						function () {
 							setTimeout(function () {
 								anim_p0.animate({
 									path: path_dee
 								},
 									500,
-									mina.elastic,
+									mina.backout,
 									loadEnd
 								)
 							}, 300)
