@@ -26,7 +26,12 @@
 <link rel="shortcut icon" href="/assets/img/favicon.png"> 
 <link href="/assets/css/main.css" rel="stylesheet"></head>
 <body>
-	<header class="siteHeader">
+	<div class="loadingAnim">
+    <div class="loadingAnim__content">
+        <svg width="250" height="250" viewBox="0 0 250 250" class="loadingAnim__output"></svg>
+    </div>
+</div>
+<header class="siteHeader">
     <div class="wrap">
         <div class="siteHeader__logo">
             <img src="/assets/img/dee-dot-horizontal.svg" alt="" width="200">
@@ -338,6 +343,7 @@
 		<!-- *****scripts -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>   
 <script type="text/javascript" src="/php/js/mailform-js.php"></script>   
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js"></script>
 <script type="text/javascript" src="/assets/js/bundle.js"></script>   
 
 <!-- /////scripts -->
