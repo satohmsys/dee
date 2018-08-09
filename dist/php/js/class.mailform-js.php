@@ -524,11 +524,6 @@ EOM;
 				.text( '必須' )
 				.addClass( 'required' )
 				.prependTo( $( mailform_dt.eq(i) ) );
-		} else {
-			$( '<span/>' )
-				.text( '任意' )
-				.addClass( 'optional' )
-				.prependTo( $( mailform_dt.eq(i) ) );
 		}
 		
 		$( '<span/>' )
@@ -632,7 +627,7 @@ EOM;
 		echo <<<EOM
 
 	
-})( jQuery );
+})( $ );
 
 
 EOM;
