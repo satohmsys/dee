@@ -34,7 +34,7 @@ $hatena: #008fed;
 
 ////base settings
 $basefontColor : #3a3a3a;
-$link: $green_dark;
+$link: lighten( $basefontColor, 10% );
 $border: $gray_lighten;
 
 

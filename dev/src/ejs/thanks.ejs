@@ -1,17 +1,16 @@
 <% 
 	include( '_include/_function.ejs' );
 	$path = './';
-	$active = 'top';
+	$active = 'thankyou';
 %>
 <!DOCTYPE html>
 <html>
 <head>
     <%- include( '_include/head.ejs' ); %>
-<meta http-equiv="refresh" content="5;URL=http://www.example.com/">
+<meta http-equiv="refresh" content="5;URL=http://dee.jpn.org/">
 </head>
-<body>
+<body class="thankyou">
 	<%- include( '_include/header.ejs' ); %>
-
 	<section class="section section--about">
 		<div class="wrap">
 			<header class="section__index">
@@ -25,8 +24,6 @@
 			</div>
 		</div>
 	</section>
-
-
 	<%- include( '_include/footer.ejs' ); %>
 </body>
 </html>

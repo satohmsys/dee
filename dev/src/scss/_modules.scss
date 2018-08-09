@@ -77,6 +77,12 @@ body{
 	
 }
 
+.thankyou .siteHeader{
+	&__description{
+		display: none;
+	}	
+}
+
 
 .-isScrolled .siteHeader{
 	padding-top: 15px;
@@ -135,6 +141,11 @@ body{
 	margin-top: 20vh;
 	font-size: 0.5em;
 	text-align: center;
+
+	a{
+		padding-bottom: 2px;
+		border-bottom: 1px solid;
+	}
 	
 		
 	@include break( tab ){
