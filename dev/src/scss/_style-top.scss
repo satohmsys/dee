@@ -101,6 +101,14 @@ p{
         filter: grayscale( 75% );
         outline: none;
 
+        @include break( 1920 ){
+            margin-right: 50px;
+            margin-left: 50px;
+        }
+        @include break(pc ){
+            margin-right: 30px;
+            margin-left: 30px;
+        }        
         @include break( tab ){
             margin-right: 1%;
             margin-left: 1%;
