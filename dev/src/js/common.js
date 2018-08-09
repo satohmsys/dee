@@ -120,10 +120,10 @@ var smoothScroll = () => {
 export {$};
 export {$w};
 export {getScrollVal};
-export default function(){
-	backToTop();
-	commonScrollToggle();
-	headExpand();
-	isLoaded();
-	smoothScroll();
-}
+
+
+backToTop();
+commonScrollToggle();
+headExpand();
+isLoaded();
+smoothScroll();

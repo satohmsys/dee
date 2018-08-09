@@ -14,11 +14,8 @@ import './src/ejs/index.ejs';
 */
 import './src/scss/style.scss';
 
-import top from './src/js/top.js';
-import common from './src/js/common.js';
+import './src/js/top.js';
+import './src/js/common.js';
 // import top from './js/top.js';
-
-
-common();
 // top();
 	
