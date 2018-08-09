@@ -40,10 +40,12 @@
 			<div class="section__content">
 				<div class="works">
 					<div class="work">
-						<figure class="work__img">
-							<img src="/assets/img/work-donatello-thumb.jpg" alt="">
-						</figure>
-						<h3 class="work__genre">Web design,Coding,Concepts,Direction</h3>
+						<a href="http://donatello.jp/" target="_blank">
+							<figure class="work__img">
+								<img src="/assets/img/work-donatello-thumb.jpg" alt="">
+							</figure>
+							<h3 class="work__genre">Web design,Coding,Concepts,Direction</h3>
+						</a>
 					</div>
 					<div class="work">
 						<figure class="work__img">
@@ -88,8 +90,8 @@
 					<div class="wrap">
 						<p>
 							Webにおいてはデザインからコーディングを一貫して請け負うことができます。</p>
-							これにより、スムーズな進行や、インタラクション（動作）においてデザインやブランドの雰囲気と違和感の少ない設計が可能です。</p>
-							<p>東京都内であれば、お打ち合わせは対面も可能。コミュニケーションにより生み出されたアイディアに対し精度が高いアウトプットが行えます。
+							これにより、スムーズな進行や、インタラクション（動作）においてデザインや<br class="spHide">ブランドの雰囲気と違和感の少ない設計が可能です。</p>
+							<p>東京都内であれば、お打ち合わせは対面も可能。<br class="spHide">コミュニケーションにより生み出されたアイディアに対し精度が高いアウトプットが行えます。
 						</p>
 					</div>
 				</section>
@@ -212,17 +214,14 @@
 				<form action="php/php/mailform.php" method="post" id="mail_form">
 					<dl>
 						<dl class="table-tr">
-							<dt class="table-th">会社名
-								<small>Company Name</small>
-							</dt>
+							<dt class="table-th" data-en="Company name">会社名</dt>
 							<dd class="table-td">
 								<input type="text" id="company" name="company" value="" />
 							</dd>
 						</dl>
 	
 						<dl class="table-tr">
-							<dt class="table-th">名前
-								<small>Your Name</small>
+							<dt class="table-th" data-en="Your name">名前
 							</dt>
 							<dd class="table-td required">
 								<input type="text" id="name_1" name="name_1" value="" />
@@ -230,27 +229,21 @@
 						</dl>
 	
 						<dl class="table-tr">
-							<dt class="table-th">ふりがな
-								<small>Name Reading</small>
-							</dt>
+							<dt class="table-th" data-en="Name reading">ふりがな</dt>
 							<dd class="table-td">
 								<input type="text" id="read_1" name="read_1" value="" />
 							</dd>
 						</dl>
 	
 						<dl class="table-tr">
-							<dt class="table-th">メールアドレス
-								<small>Mail Address</small>
-							</dt>
+							<dt class="table-th" data-en="Mail address">メールアドレス</dt>
 							<dd class="table-td required">
 								<input type="email" id="mail_address" name="mail_address" value="" />
 							</dd>
 						</dl>
 	
-						<dl class="table-tr">
-							<dt class="table-th">メールアドレス
-								<br />(確認用)
-								<small>Mail Address Confirm</small>
+						<dl class="table-tr" >
+							<dt class="table-th" data-en="Mail address confirm">メールアドレス(確認用)
 							</dt>
 							<dd class="table-td required">
 								<input type="email" id="mail_address_confirm" name="mail_address_confirm" value="" />
@@ -258,8 +251,7 @@
 						</dl>
 	
 						<dl class="table-tr">
-							<dt class="table-th">お問い合わせの種類
-								<small>Inquiry Kind</small>
+							<dt class="table-th" data-en="Inquiry kind">お問い合わせの種類
 							</dt>
 							<dd class="table-td required">
 								<ul class="lists">
@@ -284,8 +276,7 @@
 						</dl>
 	
 						<dl class="table-tr">
-							<dt class="table-th">お問い合わせの内容
-								<small>Mail Contents</small>
+							<dt class="table-th" data-en="Mail contents">お問い合わせの内容
 							</dt>
 							<dd class="table-td required">
 								<textarea id="mail_contents" name="mail_contents" cols="40" rows="5"></textarea>
@@ -301,7 +292,7 @@
 		</div>
 	</section>
 	
-	<%- include( '_include/nav.ejs' ); %>
+	<%# include( '_include/nav.ejs' ); %>
 	<%- include( '_include/footer.ejs' ); %>
 </body>
 </html>
