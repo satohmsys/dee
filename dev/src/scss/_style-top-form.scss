@@ -1,0 +1,159 @@
+@import "colors.scss";
+@import "variables.scss";
+@import "fonts.scss";
+@import "mixins.scss";
+
+
+.mfp_err{
+    margin-top: 5px;
+    padding: 1em;
+    position: relative;
+    font-size: $fontsize_s;
+    font-weight: bold;
+    background-color: $color_border;
+
+
+    &:empty{
+        display: none;
+    }
+}
+
+   #mfp_hidden,
+    div#mfp_loading{
+        display: none;
+    }
+    div#mfp_loading_screen {
+        max-width: 100%;
+        z-index: 20000;
+        opacity: 0.45;
+        display: none;
+        background-color: #fff;
+    }
+    div#mfp_overlay {
+        max-width: 100%;
+        position: absolute;
+        display: none;
+        z-index: 10001;
+    }
+    div#mfp_overlay_background{
+        max-width: 100%;
+        opacity: 0.93;
+        display: none;
+        background-color: rgba( $navy, 0.8 );
+        backface-visibility: hidden;
+    }
+    div#mfp_overlay_inner {
+        background-color: #FFF;
+        padding: $space_s;
+        margin: 0px auto;
+        border-radius: 0px;
+        width: 800px;
+        max-width: 90%;
+
+        @include mq( sp ){
+            padding: 20px;
+            box-sizing: border-box;
+        }
+    }
+
+    div#mfp_overlay_inner h4{ 
+        font-weight: bold;
+    }
+
+
+    #mfp_confirm_table{
+        width: 100%;
+        table-layout: fixed;
+        border-collapse: collapse;
+
+        @include mq( sp ){
+            font-size: $fontsize_s;
+        }        
+    }
+
+    #mfp_confirm_table th{
+        width: 100px;
+        text-align: left;
+        padding-right: 20px;
+
+        @include mq( sp ){
+            width: 90px;
+            padding-right: 10px;
+        }
+    }
+    #mfp_confirm_table tr{
+          border-bottom: 1px solid $color_border; 
+    }
+
+    #mfp_confirm_table tr,
+    #mfp_confirm_table th,
+    #mfp_confirm_table td
+    {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        word-wrap: break-word;
+    }
+
+
+    ///// button
+    .mfp_buttons{
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+
+         
+        @include mq( sp ){
+            margin-top: 20px;
+        }           
+    }
+
+
+    .mfp_element_button{
+        background: none;
+        font-size: 1em;
+        box-sizing: border-box;
+        padding: 10px 20px;
+        position: relative;
+        display: block;
+        border: 1px solid;
+        text-align: center;
+
+        &:before,
+        &:after{
+            content:" "; 
+            height: 1px;
+            margin-top: auto;
+            margin-bottom: auto;
+            position: absolute;
+            top: 0;
+            right: 10px;
+            bottom: 0;
+            background-color: currentColor;
+            transition: transition();
+        }
+
+        &:before{
+            width: 25px;
+        }
+        &:after{
+            width: 10px;
+            transform-origin: right center;
+            transform: rotate( 30deg );
+        }
+    }
+
+    #mfp_button_send{
+        width: 50%;
+        color: #ffffff;
+        background-color: $navy;
+
+            &:before,
+            &:after{
+                background-color: #fff;
+            }
+    }
+
+    #mfp_button_cancel{
+        width: 50%;
+    }
+

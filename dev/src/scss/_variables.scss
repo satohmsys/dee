@@ -37,17 +37,8 @@ $font_serif_b: 'Butler Bold', serif;
 
 
 $basefontColor : $basefontColor;
-$basefontSize : 16px;
+$basefontSize : 10px;
 $baselineHeight : 1.75;
-$mobileFontsize : 0.6;
-
-//silver ratio
-$xxlarge : 2em;
-$xlarge : 1.5em;
-$large : 1.25em;
-$small : 0.875em;
-$xsmall: 0.75em;
-
 
 
 //////////////////////
@@ -57,8 +48,8 @@ $xsmall: 0.75em;
 /////////////////////
 
 //column
-$innerWidth: 976px;
-$outerWidth:1100px;
+$innerWidth: 1000px;
+$outerWidth:90%;
 
 //margin / padding
 $sSpace : 1rem;
@@ -66,8 +57,15 @@ $mSpace : 2.5rem;
 $lSpace : 4rem;
 $xlSpace : 6rem;
 
-$navHeight : 150px;
-$navHeightSp : 55px;
+
+//////////////////////
+
+// design
+
+/////////////////////
+
+$fontsize_l : 2em;
+$fontsize_m : #{ 20 / 14 }em;
 
 
 

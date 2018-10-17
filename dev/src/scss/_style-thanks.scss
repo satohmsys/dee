@@ -1,0 +1,78 @@
+@import "colors.scss";
+@import "variables.scss";
+@import "fonts.scss";
+@import "mixins.scss";
+@import "./../../node_modules/slick-carousel/slick/slick";
+////////////////////////////////////////
+
+
+// top
+
+
+////////////////////////////////////////
+.thankyou{
+
+
+///////////////////////////////////////
+
+// nodule
+
+////////////////////////////////////////
+
+.section{
+    & + .section{
+        margin-top: 140px;
+
+        @include mq( sp ){
+            margin-top: 70px;
+        }         
+    }
+
+    &__index{
+        margin-bottom: 50px;
+        position: relative;
+        text-align: center;
+        font-size: $fontsize_xl_en;
+        font-weight: bold;
+        font-family: $fontFamily_en;
+        letter-spacing: 0.08em;
+        line-height: 1;
+
+        @include mq( sp ){
+            margin-bottom: 25px;
+            font-size: $fontsize_xl_en_sp;
+        }
+    }
+
+}
+
+
+.inner{
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+main{
+   padding-top: 25vh;
+   padding-bottom: 25vh; 
+}
+
+
+///////////////////////////////////////
+
+// style
+
+////////////////////////////////////////
+
+
+.scrollTop{
+    display: none;
+}
+
+
+
+
+
+
+}

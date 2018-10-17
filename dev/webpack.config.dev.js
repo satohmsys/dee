@@ -11,18 +11,18 @@ let config = merge( baseConfig, {
 
 	devServer: {
 		contentBase: vars.PATHS.devServer.contentBase,
-		hot: true,
-		inline: true,
+		// hot: true,
+		// inline: true,
 		compress: true,
 		open: true,
-		port: 3000,
-		// host: '0.0.0.0'
+		// port: 3000,
+		host: '0.0.0.0'
 	},
 
 	module: {
 		rules:[
 			{
-				test: /\.(otf|eot|woff|woff2|ttf)$/,
+				test: /\.(eot|otf|woff|woff2|ttf)$/,
 				exclude: /node_modules\/^(slick-carousel)/,
 				use: {
 					loader: 'file-loader',
@@ -34,7 +34,7 @@ let config = merge( baseConfig, {
 				}
 			},
 			{
-				test: /\.( gif|jpg|png|svg|ico)$/,
+				test: /\.( gif|jpg|png|svg|ico|mp4)$/,
 				use: {
 					loader: 'file-loader',
 					options: {

@@ -1,3 +1,27 @@
+/*******************
+
+weback config
+for static website
+
+update : 201803
+
+- webpack4 x sass
+@link: https://ics.media/entry/17376
+@link: https://gist.github.com/mburakerman/629783c16acf5e5f03de60528d3139af
+
+- optimization.splitChunks
+@link: https://qiita.com/soarflat/items/1b5aa7163c087a91877d
+@link: http://webdesign-dackel.com/2015/09/10/webpack-multiple-output/
+
+-autoprefixer
+@link: https://blog.funxion.jp/314/
+
+-webpack
+@link: http://dackdive.hateblo.jp/entry/2016/05/07/183335
+@link: http://dackdive.hateblo.jp/entry/2016/04/13/123000
+
+*******************/
+
 const 	webpack = require( 'webpack' ),
 		path = require( 'path' ),
 		ExtractTextPlugin = require( 'extract-text-webpack-plugin' ), 
@@ -14,19 +38,23 @@ let config = {
 	output: {
 		path: vars.PATHS.output.path,
 		publicPath: '/',
-		filename: vars.PATHS.dir.output + '/js/bundle.js',
+		filename: vars.PATHS.dir.output + '/js/[name].js',
 	},
 
 	module: {
 		rules: [
 			{
 				test: /\.js$/,
-				exclude : /node_modules/,
+				exclude: /node_modules/,
 				use: [{
 					loader: 'babel-loader',
 					options: {
 						presets: [
-							['env', {'modules': false}],
+							['env', {
+								'modules': false,
+								"useBuiltIns": true							
+								}
+							],
 							'es2015'
 						]
 					}
@@ -86,34 +114,20 @@ let config = {
 
 	plugins: [
 		new ExtractTextPlugin({
-			filename: vars.PATHS.dir.output + '/css/main.css',
+			filename: vars.PATHS.dir.output + '/css/style.css',
 			allChunks: true
 		}) ,
 	    new CopyWebpackPlugin([{
 	      from: './src/img/',
 	      to: vars.PATHS.dir.output + '/img'
 	    }]),			
-        new HtmlWebpackPlugin({
-        	filename: 'index.html',
-        	// favicon: './src/img/common/favicon.ico',
-        	template: './src/ejs/index.ejs',
-        	// inject: 'head',
-		}),
 		new HtmlWebpackPlugin({
-			filename: 'thanks.html',
+			filename: 'index.html',
 			// favicon: './src/img/common/favicon.ico',
-			template: './src/ejs/thanks.ejs',
+			template: './src/ejs/index.ejs',
 			// inject: 'head',
-		}),
-		new HtmlWebpackPlugin({
-			filename: 'pp.html',
-			// favicon: './src/img/common/favicon.ico',
-			template: './src/ejs/pp.ejs',
-			// inject: 'head',
-		}),		
-
+		})										
 	],
-
 	resolve: {
 		extensions: ['.js', '.jsx', '.css', '.scss' ]
 	}

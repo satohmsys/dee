@@ -17,7 +17,7 @@
 
 ::selection{background-color: rgba(saturate($blue , 13) , 0.3);}
 html{
-	font-size: $basefontSize;
+	font-size: 10px;
 	line-height: $baselineHeight;
 	position: relative;
 	font-family: $fontFamily;
@@ -31,6 +31,8 @@ html{
 }
 
 body{
+	font-size: 1.4rem;
+	letter-spacing: 0.15em;
 	margin-top: 0;
 	margin-right: auto;
 	margin-bottom: 0;

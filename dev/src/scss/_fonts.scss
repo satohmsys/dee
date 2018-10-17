@@ -8,17 +8,11 @@
 
 
 @font-face {
-	font-family: 'Butler Bold';
-  src: url("../fonts/butler/Butler_Bold.woff") format("woff"),
-      // url('../fonts/butler/Butler_Bold.eot?#iefix') format('embedded-opentype'),
-		   url('../fonts/butler/Butler_Bold.otf') format('truetype');
-}
-@font-face {
-	font-family: 'Butler Light';
-  src: url("../fonts/butler/Butler_Light.woff") format("woff"),
-      // url('../fonts/butler/Butler_Bold.eot?#iefix') format('embedded-opentype'),
-		   url('../fonts/butler/Butler_Light.otf') format('truetype');
-	font-weight: 700;
+	font-family: 'Butler Black';
+  src:
+  // src: url("../fonts/butler/Black.woff") format("woff"),
+      // url('../fonts/butler/Black.eot?#iefix') format('embedded-opentype'),
+		   url('../fonts/butler/Butler_Black.otf') format('opentype');
 }
 @font-face {
   font-family: 'Noto Serif Japanese';
