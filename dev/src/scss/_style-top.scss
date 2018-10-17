@@ -13,24 +13,45 @@ top
 
 
 .section{
+    margin-top: $space_l;
+
     &__index{
-        margin-bottom: 60px;
-        text-align: center;
-        font-size: 1.5em;
+        line-height: 1;
+        margin-bottom: $space_m;
+        font-size: 3em;
+        font-family: $fontfamily_en;
         font-weight: bold;
-        letter-spacing: 0.1em;
-        font-feature-settings: "palt";
-    }
-
-
-    & + .section{
-        margin-top: 18vh;
+        letter-spacing: 0.2em;
     }
 }
 
 
 p{
-    line-height: 2.25;
+    line-height: 2;
+
+    &:first-child{
+        margin-top: 0;
+    }
+}
+
+
+.sectionWithBlock {
+    display: flex;
+
+    i{
+        width: 50%;
+        flex-shrink: 0;
+        background: linear-gradient( to right,  rgb(226, 246, 255), rgb(255, 224, 230));
+        display: block;
+    }
+
+    &__content{
+        padding: $space_m;
+
+        p{
+            line-height: 2;
+        }
+    }
 }
 
 
@@ -40,3 +61,344 @@ p{
 // style
 
 ///////////////////////////////////////////////////////
+
+
+
+/////////////////////////
+
+// mv
+
+/////////////////////////
+
+.mv{
+    height: 100vh;
+    position: relative;
+    
+
+    &__copy{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        position: absolute;
+        z-index: 2;
+        font-family: $fontfamily_en;
+        font-weight: bold;
+        font-size: 3em;
+        letter-spacing: 0.2em;
+    }
+    &__img{
+        width: 61.8%;
+        height: 90vh;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+
+        .mask,
+        .mask__element{
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: block;
+        }
+
+        img{
+            max-width: none;
+            // max-width: percentage( 884 / 1366 );
+            white-space: nowrap;
+            margin: auto;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+        }
+    }
+}
+
+
+
+/////////////////////////
+
+// about
+
+/////////////////////////
+
+
+.section--about{
+
+    .section__header{
+        // margin-bottom: $space_m;
+        display: flex;
+        align-items: center;
+
+        &__img{
+            width: 55%;
+            flex-shrink: 0;
+        }
+
+        &__index{
+            padding: 70px;
+            font-size: $fontsize_l;
+            line-height: 2;
+        }
+    }
+
+}
+
+
+
+/////////////////////////
+
+// solutions
+
+/////////////////////////
+
+
+.section--solutions {
+
+    .section__index{
+       text-align: center;
+    }
+
+
+    .solutions{
+        display: flex;
+    }
+
+    .slick-slide{
+        transition: transition();
+
+        &:not( .slick-current ) .solution{
+            transform-origin: center top ;
+            transform: scale( 0.8 );
+        }
+    }
+
+    .slick-active{
+        &:nth-child( 3n ) {
+            transform: translateY( $space_m * 2 );
+        }
+        &.slick-current {
+            transform: translateY( $space_m);
+        }
+    }
+
+    .solution{
+        list-style: none;
+        max-width: 30vw;
+        flex-shrink: 0;
+        transition: transition();
+
+        
+
+        @for $i from 0 through 10 {
+            &:nth-child( #{$i } ){
+                transition-delay: #{0.2 * $i }s;
+            }
+        }
+
+        &__index{
+            margin-top: $space_s;
+            margin-bottom: $space_s;
+            font-size: $fontsize_m;
+            line-height: 1;
+            font-family: $fontfamily_en;
+            font-weight: bold;
+        }
+    }
+
+
+    .skills{
+        .skill{
+            margin-top: $space_s;
+            list-style: none;
+            font-size: #666;
+
+            &__index{
+                line-height: 1;
+                font-family: $fontfamily_en;
+                font-weight: bold;
+            }
+
+            li{
+                display: inline-block;
+
+                &:after{
+                    content:",";
+                    margin-right: 5px;
+                    margin-left: 2px;
+                    display: inline-block;
+                    vertical-align: text-bottom;
+                }
+            }
+
+            small{
+                font-size: 1rem;
+            }
+        }
+    }
+
+}
+
+
+
+/////////////////////////
+
+// detail
+
+/////////////////////////
+
+
+.section--detail {
+
+    table{
+        border-collapse: collapse;
+    }
+
+    tr{
+        border-bottom: 1px solid $color_border;
+    }
+
+    th,
+    td{
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+
+    th{
+        width: 200px;
+        vertical-align: top;
+        text-align: left;
+        letter-spacing: 0.2em;
+        font-family: $fontfamily_en;
+        font-weight: bold;
+    }
+
+}
+
+
+
+/////////////////////////
+
+// contact
+
+/////////////////////////
+
+
+.section--contact {
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    tr {
+        border-bottom: 1px solid $color_border;
+    }
+
+    th,
+    td {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+
+    th {
+        width: 200px;
+        vertical-align: top;
+        text-align: left;
+        letter-spacing: 0.2em;
+        font-family: $fontfamily_en;
+        font-weight: bold;
+    }
+
+    input[ type="text" ],
+    input[ type="email" ],
+    input[ type="name" ],
+    textarea{
+        width: 100%;
+        display: block;
+        padding: 2em;
+        border: 1px solid #cfcfcf;
+        box-sizing: border-box;
+
+    }
+
+
+    textarea{
+        min-height: 100px ;
+    }
+
+
+    .radios{
+        .radio{
+            display: inline-block;
+            margin-right: $space_m;
+            line-height: 1;
+        }
+        .radio i {
+            width: 15px;
+            height: 15px;
+            margin-right: 0.5em;
+            border-radius: 100%;
+            display: inline-block;
+            vertical-align: middle;
+            border: 1px solid #cfcfcf;
+            position: relative;
+
+            &:after{
+                content:" ";
+                width: 0px;
+                height: 0px;
+                margin: auto;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                border-radius: 10px;
+                margin: auto;
+                display: block;
+                background-color: $basefontColor;
+                transition: transition();
+            }
+        }
+        .radio input{
+            display: none;
+
+            &:checked ~ i:after{
+                width: 5px;
+                height: 5px;
+            }
+        }
+    }
+
+
+
+    .formTable{
+
+        &__attention{
+            padding: $space_s;
+
+            &__index{
+                margin-bottom: $space_s;
+            }
+
+            &__content{
+                font-size: 1rem;
+            }
+
+        }
+
+    }
+
+}

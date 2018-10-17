@@ -12,47 +12,53 @@
 	<%- include( '_include/header.ejs' ); %>
 
 	<section class="mv">
-		<div class="mv__copy">
-			<span>C</span><span>R</span><span>E</span><span>A</span><span>T</span><span>I</span><span>V</span><span>E</span><br><span>F</span><span>O</span><span>R </span><span>Y</span><span>O</span><span>U</span><span>R</span><br><span>C</span><span>R</span><span>E</span><span>A</span><span>T</span><span>I</span><span>V</span><span>E</span>
-		</div>
-		<div class="mv__img">
-			<span class="mask"><span class="mask__element"><img src="<%- $path %>../img/mv.jpg" alt=""></span></span>
+		<div class="wrap">
+			<div class="mv__copy">
+				<span class="my__copy__line"><span>C</span><span>R</span><span>E</span><span>A</span><span>T</span><span>I</span><span>V</span><span>E</span></span>
+				<span class="my__copy__line"><span>F</span><span>O</span><span>R </span><span>Y</span><span>O</span><span>U</span><span>R</span></span>
+				<span class="my__copy__line"><span>C</span><span>R</span><span>E</span><span>A</span><span>T</span><span>I</span><span>V</span><span>E</span></span>
+			</div>
+			<div class="mv__img">
+				<span class="mask"><span class="mask__element"><img src="<%- $path %>../img/mv.jpg" width="884" alt=""></span></span>
+			</div>
 		</div>
 	</section>
 
 	<section class="section section--about">
 		<header class="section__header">
-			<figure class="section__header__img">
-				<img src="<%- $path %>../img/about-img.jpg" width="683" alt="">
-			</figure>
+			<div class="section__header__img">
+				<div class="mask">
+					<figure class="mask__element">
+						<img src="<%- $path %>../img/about-img.jpg" width="683" alt="">
+					</figure>
+				</div>
+			</div>
 			<div class="section__header__index">
 				<h2>
-					私達は、中小企業やスタートアップ企業の
-					ブランド、マインドを継承・開発する
+					私達は、中小企業やスタートアップ企業の<br>
+					ブランド、マインドを継承・開発する<br>
 					デザインを提供いたします。
 				</h2>
 			</div>
 		</header>
-		<div class="wrap">
-			<section class="sectionWithBlock">
-				<i></i>
-				<div class="sectionWithBlock__content">
-					<header class="sectionWithBlock__index section__index">
-						ABOUT US
-					</header>
-					<div class="section__content">
-						<p>
-							私達は、Webサイト制作を中心としてWebアプリケーション（SPA）開発、UI、CI、グラフィックデザインを行っています。<br>
-							「デザインをビジネスのツールにする」ことを目標にかかげ、思考や外観のよさ、目には見えない印象の構築による、御社のプロジェクトの「成長の装備」や「スタートの後押し」をサポートします。
-						</p>
-						<p>
-							事業をはじめる、変えていく、また、加速させる。<br>
-							そのタイミングで、私達が良質なデザインを提供し、みなさまと共に、その先の未来に出会えることを意識し取り組んでおります。
-						</p>
-					</div>
+		<section class="sectionWithBlock">
+			<div class="sectionWithBlock__content">
+				<header class="sectionWithBlock__index section__index">
+					ABOUT US
+				</header>
+				<div class="section__content">
+					<p>
+						私達は、Webサイト制作を中心としてWebアプリケーション（SPA）開発、UI、CI、グラフィックデザインを行っています。<br>
+						「デザインをビジネスのツールにする」ことを目標にかかげ、思考や外観のよさ、目には見えない印象の構築による、御社のプロジェクトの「成長の装備」や「スタートの後押し」をサポートします。
+					</p>
+					<p>
+						事業をはじめる、変えていく、また、加速させる。<br>
+						そのタイミングで、私達が良質なデザインを提供し、みなさまと共に、その先の未来に出会えることを意識し取り組んでおります。
+					</p>
 				</div>
-			</section>
-		</div>
+			</div>
+			<i></i>
+		</section>
 	</section>
 	<section class="section section--solutions">
 		<header class="section__index">
@@ -115,7 +121,7 @@
 				<i></i>
 				<div class="sectionWithBlock__content">
 					<header class="sectionWithBlock__index section__index">
-						Skillset
+						SKILL SET
 					</header>
 					<p>私達がお請けする案件では主に上記のツールを用いています。</p>
 					<div class="section__content">
@@ -159,101 +165,103 @@
 		</div>
 	</section>
 	<section class="section section--detail">
-		<header class="section__index">
-			DETAIL
-		</header>
-		<div class="section__content">
-			<table>
-				<tr>
-					<th>Name</th>
-					<td>Dee</td>
-				</tr>
-				<tr>
-					<th>Solutions</th>
-					<td>Webサイト制作 (デザイン・コーディング) / アプリUIデザイン / グラフィックデザイン / SPA開発 /
-						Wordpress構築 / ディレクション / CI開発・デザイン / ブランディング</td>
-				</tr>
-				<tr>
-					<th>Address</th>
-					<td>東京都板橋区</td>
-				</tr>
-				<tr>
-					<th>Work time</th>
-					<td>10：00～19：00（時間外のご連絡は翌日以降の対応とさせていただきます）</td>
-				</tr>
-			</table>
+		<div class="wrap">
+			<header class="section__index">
+				DETAIL
+			</header>
+			<div class="section__content">
+				<table class="inner">
+					<tr>
+						<th>NAME</th>
+						<td>Dee</td>
+					</tr>
+					<tr>
+						<th>SOLUTIONS</th>
+						<td>Webサイト制作 (デザイン・コーディング) / アプリUIデザイン / グラフィックデザイン / SPA開発 /
+							Wordpress構築 / ディレクション / CI開発・デザイン / ブランディング</td>
+					</tr>
+					<tr>
+						<th>ADDRESS</th>
+						<td>東京都板橋区</td>
+					</tr>
+					<tr>
+						<th>WORK TIME</th>
+						<td>10：00～19：00（時間外のご連絡は翌日以降の対応とさせていただきます）</td>
+					</tr>
+				</table>
+			</div>
 		</div>
 	</section>
-	<section class="section section--concact">
-		<header class="section__index">
-			CONTACT
-		</header>
-		<div class="section__content">
-			<h2 class="pleasecontact">制作のご相談などのお問い合わせはこちらからお願いいたします。</h2>
-				<form id="mailformpro" class="formTable" action="form/mailformpro/mailformpro.cgi" method="POST">
-					<div class="formTable__row formTable__row--type">
-						<dl class="formTable__col">
-							<dt class="mfp must">種別</dt>
-							<dd class="mfp">
-								<ul class="radios">
-									<li class="radios__radio">
-										<label><input type="radio" name="種別" value="案件のご相談" checked><i></i>案件のご相談</label>
-									</li>
-									<li class="radios__radio">
-										<label><input type="radio" name="種別" value="見積もり依頼"><i></i>見積もり依頼</label>
-									</li>
-									<li class="radios__radio">
-										<label><input type="radio" name="種別" value="その他"><i></i>その他</label>
-									</li>
-								</ul>
-							</dd>
-						</dl>
-					</div>
-					<div class="formTable__row">
-						<div class="formTable__col">
-							<dl class="formTable__col__row">
+	<section class="section section--contact">
+		<div class="wrap">
+			<header class="section__index">
+				CONTACT
+			</header>
+			<div class="section__content">
+				<div class="inner">
+					<h2 class="pleasecontact">制作のご相談などのお問い合わせはこちらからお願いいたします。</h2>
+					<form id="mailformpro" class="formTable" action="form/mailformpro/mailformpro.cgi" method="POST">
+						<table>
+							<tr class="formTable__row formTable__row--type">
+								<th class="mfp must">TYPE</th>
+								<td class="mfp">
+									<ul class="radios">
+										<li class="radio">
+											<label><input type="radio" name="種別" value="案件のご相談" checked><i></i>案件のご相談</label>
+										</li>
+										<li class="radio">
+											<label><input type="radio" name="種別" value="見積もり依頼"><i></i>見積もり依頼</label>
+										</li>
+										<li class="radio">
+											<label><input type="radio" name="種別" value="その他"><i></i>その他</label>
+										</li>
+									</ul>
+								</td>
+							</tr>
+							<tr class="formTable__col__row">
 								<input type="hidden" name="団体名" value="">
-								<dt class="mfp">Company</dt>
-								<dd class="mfp">
+								<th class="mfp">COMPANY</th>
+								<td class="mfp">
 									<input type="text" name="団体名" placeholder="団体名（法人名・学校名等）">
-								</dd>
-							</dl>
-							<dl class="formTable__col__row formTable__col__row--name">
+								</td>
+							</tr>
+							<tr class="formTable__col__row formTable__col__row--name">
 								<input type="hidden" name="お名前" data-unjoin="姓+ +名+（+セイ+ +メイ+）" value="">
-								<dt class="mfp must">Name</dt>
-								<dd class="mfp">
+								<th class="mfp must">NAME</th>
+								<td class="mfp">
 									<input type="text" name="姓" data-kana="セイ" size="15" placeholder="Name" required="required">
-								</dd>
-							</dl>
-							<dl class="formTable__col__row">
+								</td>
+							</tr>
+							<tr class="formTable__col__row">
 								<input type="hidden" name="mfp_separator_01" value="\n【メールアドレス】\n">
-								<dt class="mfp must">Mail</dt>
-								<dd class="mfp"><input type="email" data-type="email" name="email" placeholder="info@miduno.co.jp" required="required"></dd>
-							</dl>
-							<dl class="formTable__col__row formTable__col__row--message">
-								<dt class="mfp must">Message</dt>
-								<dd class="mfp"><textarea name="お問い合わせ" placeholder="ご記入ください" required="required"></textarea></dd>
-							</dl>
-					</div>
-					<aside class="formTable__attention">
-						<header class="formTable__attention__index">
-							個人情報の取扱いについて
-						</header>
-						<div class="formTable__attention__content">
-							お客さまの個人情報はお問い合わせに対する返信の目的でのみ利用し、当社にて適切に管理します。法令などにより開示を求められた場合を除き、お客さまの同意無しに第三者に開示・提供することはありません。
-						</div>
-					</aside>
-					<div class="formTable__button">
-						<div class="mfp_buttons buttons">
-							<div class="button">
-								<button type="submit">確認画面へ</button>
+								<th class="mfp must">MAIL</th>
+								<td class="mfp"><input type="email" data-type="email" name="email" placeholder="info@miduno.co.jp" required="required"></td>
+							</tr>
+							<tr class="formTable__col__row formTable__col__row--message">
+								<th class="mfp must">MESSAGE</th>
+								<td class="mfp"><textarea name="お問い合わせ" placeholder="ご記入ください" required="required"></textarea></td>
+							</tr>
+						</table>
+						<aside class="formTable__attention">
+							<header class="formTable__attention__index">
+								個人情報の取扱いについて
+							</header>
+							<div class="formTable__attention__content">
+								お客さまの個人情報はお問い合わせに対する返信の目的でのみ利用し、当社にて適切に管理します。法令などにより開示を求められた場合を除き、お客さまの同意無しに第三者に開示・提供することはありません。
+							</div>
+						</aside>
+						<div class="formTable__button">
+							<div class="mfp_buttons buttons">
+								<div class="button">
+									<button type="submit">CONFIRM</button>
+								</div>
 							</div>
 						</div>
-					</div>
-				</form>
+					</form>
+				</div>
 				<script type="text/javascript" id="mfpjs" src="form/mailformpro/mailformpro.cgi" charset="UTF-8"></script>
-		</div>
-	</section>
+			</div>
+		</section>
 	<%# include( '_include/nav.ejs' ); %>
 	<%- include( '_include/footer.ejs' ); %>
 </body>

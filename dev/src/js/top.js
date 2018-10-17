@@ -12,7 +12,7 @@ import './slick/slick.js';
 			const $scrollBottom = $scrollVal + $w.height();
 		};
 
-		$( '.works' ).slick({
+		$( '.solutions' ).slick({
 			infinite: true,
 			slidesToShow: 3,
 			slidesToScroll: 1,

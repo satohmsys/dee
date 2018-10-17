@@ -32,8 +32,7 @@
 // $fontFamily :"Yu Gothic", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
 $fontFamily : "Noto Serif Japanese",  "ヒラギノ明朝 ProN W3", Hiragino Mincho ProN , "MSP明朝","MS PMincho","MS 明朝",serif;
 
-$font_serif: 'Butler Light', serif;
-$font_serif_b: 'Butler Bold', serif;
+$fontfamily_en: 'Butler Black', serif;
 
 
 $basefontColor : $basefontColor;
@@ -64,9 +63,14 @@ $xlSpace : 6rem;
 
 /////////////////////
 
-$fontsize_l : 2em;
-$fontsize_m : #{ 20 / 14 }em;
+$fontsize_l : 1.5em;
+$fontsize_m : #{ (20 / 14) }em;
 
+
+$space_xs: 30px;
+$space_s: 40px;
+$space_m: 70px;
+$space_l: 150px;
 
 
 //////////////////////
