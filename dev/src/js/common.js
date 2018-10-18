@@ -15,39 +15,39 @@ var getScrollVal = ( callback ) => {
 		} );
 }
 
-var backToTop = () => {
-		$('.siteFooter__backToTop').on( 'click', function( e ){
-			e.preventDefault();
-			e.stopPropagation();
+// var backToTop = () => {
+// 		$('.siteFooter__backToTop').on( 'click', function( e ){
+// 			e.preventDefault();
+// 			e.stopPropagation();
 
-			$( 'body,html' ).animate({
-				scrollTop: 0
-			}, '800', 'swing' );
-		});
-}
+// 			$( 'body,html' ).animate({
+// 				scrollTop: 0
+// 			}, '800', 'swing' );
+// 		});
+// }
 
-var navToggle = () => {	
-		/**
-		* sp button
-		*/
-		var $toggle = $( '.navToggle' );
+// var navToggle = () => {	
+// 		/**
+// 		* sp button
+// 		*/
+// 		var $toggle = $( '.navToggle' );
 
-		$toggle.on( 'click', function(){
-			$body.toggleClass( 'navOpen' );
-		} );
-		$w.on( 'resize', function(){
-			if( $flag ){
-				$flag = false;
-				setTimeout(function(){
-					if( 700 < $w.width() ){
-						$body.removeClass( 'navOpen' );
-					}
-					$flag = true;
-					return $flag;
-				}, 500 );
-			}
-		});
-}
+// 		$toggle.on( 'click', function(){
+// 			$body.toggleClass( 'navOpen' );
+// 		} );
+// 		$w.on( 'resize', function(){
+// 			if( $flag ){
+// 				$flag = false;
+// 				setTimeout(function(){
+// 					if( 700 < $w.width() ){
+// 						$body.removeClass( 'navOpen' );
+// 					}
+// 					$flag = true;
+// 					return $flag;
+// 				}, 500 );
+// 			}
+// 		});
+// }
 
 var commonScrollToggle = () => {
 		let f = ( $scrollVal ) =>{
@@ -122,7 +122,6 @@ export {$w};
 export {getScrollVal};
 
 
-backToTop();
 commonScrollToggle();
 headExpand();
 isLoaded();

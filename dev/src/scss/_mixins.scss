@@ -165,7 +165,7 @@
 // @param $mediaSize	デバイス種類 sp tab pc
 // @param $minMax		min / max
 // 
-@mixin break(
+@mixin mq(
 	$mediaSize ,
 	$minMax : max ,
 	$heightOrWidth : width){

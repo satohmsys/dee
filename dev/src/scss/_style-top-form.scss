@@ -8,7 +8,7 @@
     margin-top: 5px;
     padding: 1em;
     position: relative;
-    font-size: $fontsize_s;
+    font-size: 1rem;
     font-weight: bold;
     background-color: $color_border;
 
@@ -39,7 +39,7 @@
         max-width: 100%;
         opacity: 0.93;
         display: none;
-        background-color: rgba( $navy, 0.8 );
+        background-color: rgba( #fff, 0.8 );
         backface-visibility: hidden;
     }
     div#mfp_overlay_inner {
@@ -67,7 +67,7 @@
         border-collapse: collapse;
 
         @include mq( sp ){
-            font-size: $fontsize_s;
+            // font-size: $fontsize_s;
         }        
     }
 
@@ -99,7 +99,7 @@
     .mfp_buttons{
         margin-top: 40px;
         display: flex;
-        justify-content: center;
+        // justify-content: center;
 
          
         @include mq( sp ){
@@ -112,11 +112,12 @@
         background: none;
         font-size: 1em;
         box-sizing: border-box;
-        padding: 10px 20px;
+        padding: 2em;
         position: relative;
         display: block;
         border: 1px solid;
         text-align: center;
+        letter-spacing: 0.2em;
 
         &:before,
         &:after{
@@ -145,7 +146,7 @@
     #mfp_button_send{
         width: 50%;
         color: #ffffff;
-        background-color: $navy;
+        background-color: $basefontColor;
 
             &:before,
             &:after{

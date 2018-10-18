@@ -18,7 +18,7 @@ let config = merge( baseConfig, {
 	module: {
 		rules:[
 			{
-				test: /\.(eot|woff|woff2|ttf)$/,
+				test: /\.(eot|woff|woff2|ttf|otf)$/,
 				exclude: /node_modules\/^(slick-carousel)/,
 				use: {
 					loader: 'file-loader',

@@ -22,6 +22,12 @@ top
         font-family: $fontfamily_en;
         font-weight: bold;
         letter-spacing: 0.2em;
+
+        @include mq(sp) {
+            text-align: left;
+            font-size: 2.875em;
+            margin-bottom: 50px;
+        }
     }
 }
 
@@ -39,14 +45,18 @@ p{
     display: flex;
 
     i{
-        width: 50%;
-        flex-shrink: 0;
-        background: linear-gradient( to right,  rgb(226, 246, 255), rgb(255, 224, 230));
+        width: 100%;
+        // flex-shrink: 0;
+        background: linear-gradient( to bottom right,  rgb(226, 246, 255), rgb(255, 224, 230));
         display: block;
     }
 
     &__content{
         padding: $space_m;
+
+        @include mq( sp ) {
+            padding: $space_s;
+        }
 
         p{
             line-height: 2;
@@ -73,6 +83,14 @@ p{
 .mv{
     height: 100vh;
     position: relative;
+
+    @include mq( 1680, min ){
+        font-size: #{( 14 / 1366 * 100 )}vw;
+    }
+
+    // @include mq(tab) {
+    //     height: 80vh;
+    // }
     
 
     &__copy{
@@ -98,6 +116,10 @@ p{
         left: 0;
         overflow: hidden;
 
+        @include mq( tab ) {
+            width: 85%;
+        }
+
         .mask,
         .mask__element{
             position: absolute;
@@ -111,16 +133,35 @@ p{
         img{
             max-width: none;
             // max-width: percentage( 884 / 1366 );
-            white-space: nowrap;
-            margin: auto;
             position: absolute;
             top: 0;
             right: 0;
             bottom: 0;
             left: 0;
 
+            @include mq( 1366, min  ){
+                max-width: 100%;
+                width: 100%;
+            }
+
+			@include mq( tab ) {
+			    max-width: auto;
+                width: auto;
+                height: 100%;
+			}
+
         }
     }
+
+
+	.mask {
+	    &:before {
+            animation-delay: 1s;
+	    }
+	    &__element {
+	       transition-delay: 0.85s;
+	    }
+	}
 }
 
 
@@ -134,20 +175,53 @@ p{
 
 .section--about{
 
+    @include mq(tab) {
+        margin-top: $space_s;
+    }
+
     .section__header{
         // margin-bottom: $space_m;
         display: flex;
         align-items: center;
 
+        @include mq( tab ) {
+            flex-direction: column;
+        }
+
         &__img{
             width: 55%;
             flex-shrink: 0;
+
+			@include mq(tab) {
+			    width: 100%;
+			}
+
+            img{
+                width: 100%;
+            }
+
         }
 
         &__index{
             padding: 70px;
-            font-size: $fontsize_l;
+            font-size: $fontsize_m;
             line-height: 2;
+
+			@include mq( sp ) {
+			    padding: 30px;
+
+                br{
+                    display: none;
+                }
+			}
+        }
+
+
+        & + section{
+            margin-top: $space_m;
+
+			@include mq(tab) {
+			}
         }
     }
 
@@ -170,7 +244,9 @@ p{
 
 
     .solutions{
+        margin-bottom: $space_m;
         display: flex;
+        flex-wrap: wrap;
     }
 
     .slick-slide{
@@ -178,32 +254,72 @@ p{
 
         &:not( .slick-current ) .solution{
             transform-origin: center top ;
-            transform: scale( 0.8 );
+            // transform: scale( 0.8 );
+        }
+
+        @for $i from 1 through 10 {
+            &:nth-child( #{$i} ){
+                margin-top: $space_s * $i;
+                // transform: translateY($space_s * $i);
+            }
         }
     }
 
-    .slick-active{
-        &:nth-child( 3n ) {
-            transform: translateY( $space_m * 2 );
-        }
-        &.slick-current {
-            transform: translateY( $space_m);
-        }
-    }
+    // .slick-active{
+    //     &:nth-child( 3n ) {
+    //         transform: translateY( $space_m * 2 );
+    //     }
+    //     &.slick-current {
+    //         transform: translateY( $space_m);
+    //     }
+    // }
 
     .solution{
         list-style: none;
-        max-width: 30vw;
+        width: 31%;
         flex-shrink: 0;
         transition: transition();
 
-        
+        @include mq( sp ) {
+            width: 47.5%;
+            margin-bottom: $space_s;
+        }
 
-        @for $i from 0 through 10 {
-            &:nth-child( #{$i } ){
-                transition-delay: #{0.2 * $i }s;
+        &:not( :nth-child(3n)) {
+            @include mq(sp, min) {
+                margin-right: 2%;
             }
         }
+        &:not( :nth-child( even )) {
+            @include mq(sp ) {
+                margin-right: 5%;
+            }
+        }
+
+
+        @for $i from 2 through 10 {
+            @include mq( sp, min ){
+                &:nth-child(#{$i}) {
+                    $val: 0;
+                    @if( $i < 4 ){
+                        $val: #{$space_s * ($i - 1)};
+                        margin-top: $val;
+                    } @else {
+                        $val: #{$space_s * ($i - 3)};
+                        margin-top: $val;
+                    }
+                    // transform: translateY($space_s * $i);
+                }
+            }
+        }
+
+        
+
+        // @for $i from 0 through 10 {
+        //     &:nth-child( #{$i } ){
+        //         transition-delay: #{0.2 * $i }s;
+        //     }
+        // }
 
         &__index{
             margin-top: $space_s;
@@ -212,6 +328,16 @@ p{
             line-height: 1;
             font-family: $fontfamily_en;
             font-weight: bold;
+
+            @include mq(sp) {
+                font-size: 1em;
+            }
+        }
+
+        &__img{
+            img{
+                width: 100%;
+            }
         }
     }
 
@@ -281,6 +407,10 @@ p{
         letter-spacing: 0.2em;
         font-family: $fontfamily_en;
         font-weight: bold;
+
+        @include mq( sp ){
+            width: 140px;
+        }        
     }
 
 }
@@ -298,11 +428,15 @@ p{
 
     table {
         width: 100%;
+        margin-top: $space_s;
+        margin-bottom: $space_s;
         border-collapse: collapse;
     }
 
     tr {
-        border-bottom: 1px solid $color_border;
+        // &:not( :last-child ){
+            border-bottom: 1px solid $color_border;
+        // }
     }
 
     th,
@@ -314,11 +448,25 @@ p{
 
     th {
         width: 200px;
-        vertical-align: top;
         text-align: left;
         letter-spacing: 0.2em;
         font-family: $fontfamily_en;
         font-weight: bold;
+        position: relative;
+
+        &.must{
+            &:after{
+                content: "*";
+                position: absolute;
+                left: 0;
+                bottom: 1em;
+                color: skyblue
+            }
+        }
+
+        @include mq( sp ) {
+            width: 140px;
+        }
     }
 
     input[ type="text" ],
@@ -331,6 +479,14 @@ p{
         border: 1px solid #cfcfcf;
         box-sizing: border-box;
 
+        @include mq( sp ){
+            font-size: 1.6rem;
+            padding: 1em;
+        }
+
+        &::placeholder{
+            color: #cfcfcf;
+        }
     }
 
 
@@ -387,9 +543,11 @@ p{
     .formTable{
 
         &__attention{
-            padding: $space_s;
+            margin-top: $space_s;
+            // padding: $space_s;
 
             &__index{
+                line-height: 1;
                 margin-bottom: $space_s;
             }
 
@@ -399,6 +557,37 @@ p{
 
         }
 
+        .mfp__button{
+            letter-spacing: 0.2em;
+        }
+
     }
 
+}
+
+
+/////////////////////////
+
+// privacy
+
+/////////////////////////
+
+.section--privacy{
+
+    &__indexList{
+
+        >  li{
+            margin-top: $space_s;
+            list-style: none;
+        }
+
+        h3{
+            margin-bottom: $space_s;
+            font-weight: bold;
+        }
+        h3 + div {
+            padding-left: 2em;
+            border-left: 1px solid $color_border;
+        }
+    }
 }

@@ -34,7 +34,7 @@ body{
 	left: 0;	
 	transition: all 0.1s linear 0s;
 	
-	@include break( tab ){
+	@include mq( tab ){
 		padding-top: 25px;
 		padding-bottom: 25px;
 	}		
@@ -55,8 +55,8 @@ body{
 			transition-delay: 0.2s;
 			
 			
-			@include break( tab ){
-				max-width: 100px;
+			@include mq( tab ){
+				max-width: 60px;
 			}				
 		}
 	}
@@ -65,8 +65,11 @@ body{
 	&__description{	
 		font-size: 1rem;
 		transition: transition();
+		text-align: left;
 
-		@include break( tab) {
+		@include mq( sp ) {
+			line-height: 1.75;
+			margin-left: $space_s;
 		}
 	}
 
@@ -81,21 +84,18 @@ body{
 
 
 .-isScrolled .siteHeader{
-	padding-top: 15px;
-	padding-bottom: 30px;
 
-	@include break( tab){
-		padding-top: 13px;
-		padding-bottom: 12px;
+	&__logo{
+		img{
+			width: 60px;
+
+			@include mq( sp ) {
+				max-width: 30px;
+			}
+		}
 	}
 
-
 	&__description {
-		margin-top: 25px;
-
-		@include break( tab) {
-			margin-top: 10px;
-		}
 	}
 }	
 
@@ -124,6 +124,74 @@ body{
 	}
 }
 
+////////////////////
+
+// sitenav
+
+////////////////////
+
+.siteNav{
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	line-height: 1;
+	transition: transition();
+	opacity: 0;
+	pointer-events: none;
+
+	@include mq( sp ){
+		box-sizing: border-box;
+		padding-right: 5%;	
+		padding-left: 5%;
+		overflow: hidden;
+	}
+
+	@at-root .-isScrolled .siteNav{
+		opacity: 0.5;
+		pointer-events: all;
+	}
+
+	ul{
+		padding-bottom: 2em;
+		display: flex;
+		justify-content: center;
+
+		@include mq(sp) {
+			width: 100%;
+			box-sizing: border-box;
+			justify-content: flex-start;
+			padding-right: 5%;
+			padding-left: 5%;
+			overflow: auto;
+			-webkit-overflow-scrolling: touch;
+		}
+
+
+	}
+
+	li{
+		list-style: none;
+		a{
+			font-family: $fontfamily_en;
+		}
+
+		&:not( :last-child ){
+			&:after{
+				content:  "";
+				width: 5em;
+				height: 1px;
+				margin-right: 1em;
+				margin-left: 1em;
+				display: inline-block;
+				vertical-align: middle;
+				background-color: $basefontColor;
+			}
+		}
+	}
+}
+
 
 
 ////////////////////
@@ -138,15 +206,34 @@ body{
 	font-size: 0.5em;
 	text-align: center;
 
+
+	&__icon{
+		width: 90%;
+		margin-left: auto;
+		margin-bottom: $space_m;
+		height: 200px;
+		display: block;
+        background: linear-gradient(to bottom right, rgb(226, 246, 255), rgb(255, 224, 230));
+
+		@include mq( sp ) {
+			height: 150px;
+		}
+
+	}
+
 	a{
 		padding-bottom: 2px;
 		border-bottom: 1px solid;
 	}
 	
 		
-	@include break( tab ){
+	@include mq( tab ){
 		margin-top: 60px;
 	}		
+
+	&__copyright{
+		margin-top: $space_s;
+	}
 
 }
 
@@ -181,7 +268,7 @@ body{
 		fill: #777777
 	}
 	
-	@include break( tab ){
+	@include mq( tab ){
 	}
 
 }
@@ -196,12 +283,12 @@ body{
 		z-index: 0;
 		position: absolute;
 
-		@include break( 1366 ){
+		@include mq( 1366 ){
 			height: 90vh;
 		}			
 		
 		
-		@include break( tab ){
+		@include mq( tab ){
 			height: 50vh;
 		}			
 	}

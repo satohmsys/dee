@@ -27,7 +27,7 @@
 	margin-right: auto;	
 	// box-sizing: border-box;
 	
-	@include break( tab ){
+	@include mq( tab ){
 			padding-left: 5%;
 			padding-right: 5%;
 	}//max 580	
@@ -60,7 +60,7 @@
 .spShow{
 	display: none;
 }
-@include break( sp ){
+@include mq( sp ){
 	.spHide{
 		display: none;	
 	}
@@ -72,7 +72,7 @@
 .tabShow{
 	display: none;
 }
-@include break( tab ){
+@include mq( tab ){
 	.tabHide{
 		display: none;	
 	}
@@ -165,4 +165,164 @@
 		
 	}
 
+}
+
+
+
+.button{
+	width: 400px;
+
+	a,button{
+		width: 100%;
+		height: 100%;
+		padding: 2em;
+		font-size: 1.4rem;
+		box-sizing: border-box;	
+		display: block;
+		position: relative;
+		font-family: $fontfamily_en;
+		background-color: $basefontColor;
+		color: #ffffff;
+		border: none;
+
+
+        &:before,
+        &:after {
+        	content: " ";
+        	height: 1px;
+        	margin-top: auto;
+        	margin-bottom: auto;
+        	position: absolute;
+        	top: 0;
+        	right: 10px;
+        	bottom: 0;
+        	background-color: currentColor;
+        	transition: transition();
+        }
+
+        &:before {
+        	width: 25px;
+        }
+
+        &:after {
+        	width: 10px;
+        	transform-origin: right center;
+        	transform: rotate(30deg);
+        }
+	}
+}
+
+
+
+
+.randomFade{
+
+	.prhalf {
+		padding-right: 0.25em;
+	}
+
+	>span{
+		// width: 1em;
+		// height: 1em;
+		// padding-top: 100%;
+		// text-indent: -100%;
+		display: inline-block;
+		overflow: hidden;
+
+		>span{
+			opacity: 0;
+			transform: translateY( 2em );
+			display: inline-block;
+			transition: easeInOut(all, 0.5s);
+		}
+
+
+		@for $i from 1 through 90 {
+
+			&:nth-child( #{ $i } ) span{
+				$val: 0.05 * $i;
+				@if( $i % 2 == 0 ){$val: 0.065 * $i;}
+				transition-delay: #{$val}s;
+			}
+		}
+	}
+	@at-root .js-effect.-on .randomFade span span{
+		transform: translateY( 0 );
+		opacity: 1;
+
+	}
+}
+
+
+
+////////////////////
+
+// mask efffect
+
+////////////////////
+
+%maskeElement {
+	&:before {
+		content: " ";
+		top: auto;
+		bottom: 0;
+		animation: maskmove 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.15s 1 normal;
+	}
+
+	&__element {
+		overflow: hidden;
+		white-space: normal;
+		display: inherit;
+		transform: translateY(100%);
+	}
+}
+
+// .js-effect {
+.mask {
+	display: inline-block;
+	overflow: hidden;
+	position: relative;
+
+	&:before {
+		content: " ";
+		width: 100%;
+		height: 100%;
+		display: block;
+		position: absolute;
+		z-index: 2;
+		left: 0;
+		transform: scaleY(0);
+		transform-origin: center bottom;
+		// transition: transition();
+		// transition-delay: 0.15s;
+		background-color: #fafafa;
+		will-change: transform;
+	}
+
+	&__element {
+		white-space: nowrap;
+		display: inline-block;
+		transform: translateY( 100% );
+		transition: transition(all, 0.5s);
+		transition-delay: 0.2s;
+		will-change: transform;
+	}
+}
+
+// }
+.-on{
+	.mask {
+		&:before {
+			content: " ";
+			left: auto;
+			right: 0;
+			animation: maskmove 0.5s ease 0.15s 1 normal;
+		}
+
+		&__element {
+			white-space: normal;
+			display: inherit;
+			transform: translateY(0%);
+		}
+	}
 }
