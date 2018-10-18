@@ -42,5 +42,5 @@ import { getScrollVal, $w } from './common.js';
 			$('.loadingAnim').fadeOut('fast', function(){
 				$('.loadingAnim').remove();
 			});
-		}, 500);
+		}, 500 );
 	}

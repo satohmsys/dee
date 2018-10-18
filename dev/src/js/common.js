@@ -1,4 +1,6 @@
 import $ from 'jquery';
+import {TweenMax} from 'gsap';
+import {TimelineMax} from 'gsap/TimelineMax';
 
 let $w = $( window ),
 	$body = $( 'body' ),
@@ -50,25 +52,25 @@ var getScrollVal = ( callback ) => {
 // }
 
 var commonScrollToggle = () => {
-		let f = ( $scrollVal ) =>{
-			let $jsEffect = $('.js-effect'),
-				$scrollBottom = $scrollVal + $w.height();
+	let f = ( $scrollVal ) =>{
+		let $jsEffect = $('.js-effect'),
+			$scrollBottom = $scrollVal + $w.height();
 
-			/**
-			* all fadein targets
-			*/
-			if( $jsEffect ){
-				$.each( $jsEffect, function(){
-					let $target = $( this );
+		/**
+		* all fadein targets
+		*/
+		if( $jsEffect ){
+			$.each( $jsEffect, function(){
+				let $target = $( this );
 
-					if( $target.offset().top < $scrollBottom - 90 ) {
-						$target.addClass( '-on' );
-					}
+				if( $target.offset().top < $scrollBottom - 90 ) {
+					$target.addClass( '-on' );
+				}
 
-				});				
-			}					
-		}
-		getScrollVal( f );
+			});				
+		}					
+	}
+	getScrollVal( f );
 }
 
 var headExpand = () => {
@@ -76,9 +78,6 @@ var headExpand = () => {
 		let f = ( $scrollVal ) => {
 			$mvHeight*2 < $scrollVal ? $body.addClass('-isScrolledMore') : $body.removeClass('-isScrolledMore') 
 			350 < $scrollVal ? $body.addClass('-isScrolled') : $body.removeClass('-isScrolled') 
-			// if(350 < $scrollVal) $('.siteHeader').css({
-
-			// })
 		}
 
 		getScrollVal( f );
@@ -86,20 +85,78 @@ var headExpand = () => {
 
 var isLoaded = () => {
 
-	let $loadingAnim = $( '.loadingAnim' );
-	
-	if( $loadingAnim ){
-		$loadingAnim.find('.loadingAnim__text').on( 'transitionend', function(){
-			$loadingAnim.remove();
-			$body.addClass( 'isRenderered')
+	let $loadingAnim = $( '.loadingAnim' ),
+		t = TweenMax;
+
+		t.fromTo('#shape-d', 1, 
+			{
+				x: 30,
+				rotation: '-180deg',
+				transformOrigin: 'center center'
+			},
+			{
+				x: 0,
+				rotation: 0,
+				delay: 2,
+			}
+		)
+		t.fromTo('#shape-e', 1,
+			{
+				x: -10,
+				transformOrigin: 'left center',
+			},
+			{
+				x: 0,
+				rotation: 0,
+				delay: 2,
+			}
+		)
+		t.fromTo('#shape-ee', 1, {
+			x: -30,
+			transformOrigin: 'left center',
+		}, {
+			x: 0,
+			rotation: 0,
+			delay: 2,
+			onComplete: () => {
+				let bg = document.getElementsByClassName('loading__bg')[0],
+					body = document.body;
+
+				setTimeout(() => {
+					document.body.classList.add('-isTweenEnd');
+					bg.addEventListener('transitionend', function (e) {
+						e.stopPropagation();
+						document.body.classList.add('-isAfterAnimEnd');
+
+						t.to( '.loading', 0.5, {
+							opacity: 0,
+							delay: 1,
+							onComplete: ( e ) => {
+								document.body.removeChild( document.getElementsByClassName('loading')[0]);
+
+								setTimeout( ()=>{
+									document.getElementsByClassName('mv')[0].classList.add( 'js-effect','-on')
+								}, 50 )
+							}
+						})
+					})
+				}, 500 )
+			}
 		})
-		$w.on( 'load', function(){
-			$body.addClass( 'isLoaded' );
-			// $( '.loadingAnim' ).fadeOut('fast', function(){
-			// 	$(this).remove();
-			// })
-		});	
-	}
+
+	
+	// if( $loadingAnim ){
+	// 	$loadingAnim.find('.loadingAnim__text').on( 'transitionend', function(){
+	// 		$loadingAnim.remove();
+	// 		$body.addClass( 'isRenderered')
+	// 	})
+	// 	$w.on( 'load', function(){
+	// 		$body.addClass( 'isLoaded' );
+	// 		// $( '.loadingAnim' ).fadeOut('fast', function(){
+	// 		// 	$(this).remove();
+	// 		// })
+	// 	});	
+	// }
 }
 
 var smoothScroll = () => {

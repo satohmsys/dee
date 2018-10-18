@@ -12,6 +12,85 @@ body{
 }
 
 
+////////////////////
+
+// loading
+
+////////////////////
+
+.loading{
+
+	position: fixed;
+	background-color: #fff;
+
+	&,
+	&__bg,
+	&__content{
+		width: 100vw;
+		height: 100vh;
+		margin: auto;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 10;
+	}
+
+
+	&__content{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		overflow: hidden;
+	}
+
+	@at-root .-isAfterAnimEnd .loading__content {
+		width: 61.8%;
+		height: 90vh;
+		margin: auto;
+		transition: transition(all, 0.5s);
+
+		@include mq(tab) {
+			width: 85%;
+		}
+	}
+
+	&__bg{
+		position: absolute;
+		transition: transition(all, 0.5s);
+		transform: translateY(100%);
+		background: linear-gradient(to bottom right, rgb(226, 246, 255), rgb(255, 224, 230));
+	}
+
+	@at-root .-isTweenEnd {
+		.loading__bg{
+			mix-blend-mode:hard-light;
+			transform: translateY(0);
+		}
+	}
+
+
+	svg {
+		width: 150px;
+		height: auto;
+
+		// #shape-d {
+		// 	transform: translateX(30px);
+		// }
+
+		// #shape-e {
+		// 	transform: translateX(-10px);
+		// }
+		// #shape-ee {
+		// 	transform: translateX(-30px);
+		// }
+	}
+}
+
+
+
 
 ////////////////////
 
@@ -51,7 +130,7 @@ body{
 		line-height: 1;
 		
 		img{
-			transition: all 0.1s linear 0s;
+			transition: all 0.5s linear 0s;
 			transition-delay: 0.2s;
 			
 			

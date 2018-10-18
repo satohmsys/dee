@@ -156,6 +156,7 @@ p{
 
 	.mask {
 	    &:before {
+            animation-duration: 1s;
             animation-delay: 1s;
 	    }
 	    &__element {
@@ -196,10 +197,13 @@ p{
 			    width: 100%;
 			}
 
+            .mask:before{
+                animation-duration: 0.5s;
+            }
+
             img{
                 width: 100%;
             }
-
         }
 
         &__index{
@@ -209,6 +213,8 @@ p{
 
 			@include mq( sp ) {
 			    padding: 30px;
+                font-size: 1em;
+                font-weight: bold;
 
                 br{
                     display: none;
